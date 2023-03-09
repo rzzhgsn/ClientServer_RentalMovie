@@ -1,3 +1,4 @@
+using API_RentalMovie.Repositories.Data;
 using ClientServer_RentalMovie.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +28,25 @@ builder.Services.AddControllers();
 // Configure Context to Sql Server Database
 var connectionString = builder.Configuration.GetConnectionString("Connection");
 builder.Services.AddDbContext<MyContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<AccountRepository>();
+builder.Services.AddScoped<AccountRoleRepository>();
+builder.Services.AddScoped<ActorRepository>();
+builder.Services.AddScoped<AddressRepository>();
+builder.Services.AddScoped<CategoryRepository>();
+builder.Services.AddScoped<CityRepository>();
+builder.Services.AddScoped<CountryRepository>();
+builder.Services.AddScoped<CustomerRepository>();
+builder.Services.AddScoped<FilmActorRepository>();
+builder.Services.AddScoped<FilmCategoryRepository>();
+builder.Services.AddScoped<FilmRepository>();
+builder.Services.AddScoped<InventoryRepository>();
+builder.Services.AddScoped<LanguageRepository>();
+builder.Services.AddScoped<PaymentRepository>();
+builder.Services.AddScoped<RentalRepository>();
+builder.Services.AddScoped<RoleRepository>();
+builder.Services.AddScoped<StaffRepository>();
+builder.Services.AddScoped<StoreRepository>();
 
 // Configure JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
