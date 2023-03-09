@@ -29,7 +29,7 @@ public class MyContext : DbContext
     public DbSet<Payment> Payments { get; set; }
     public DbSet<Rental> Rentals { get; set; }
     public DbSet<Role> Roles { get; set; }
-    public DbSet<Staff> Staff { get; set; }
+    public DbSet<Staff> Staffs { get; set; }
     public DbSet<Store> Stores { get; set; }
 
     //Fluent API
